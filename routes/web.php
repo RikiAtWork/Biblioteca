@@ -20,11 +20,12 @@ Route::get('/', function () {
     return view('home');
 })->name("principal");
 
-Route::get('/crea_libros', function(){
+Route::get('/insertar_libro', function(){
     return view('libros.create');
-})-> name('libros_create');
+})->name('libros_create');
 
-Route::get('/crea/libros', [LibroController::class, 'store'])->name('libros.store');
+Route::resource('libros', LibroController::class);
+
 
 Route::get('/lista_libros', [LibroController::class, 'index'])->name('libros.index');
 

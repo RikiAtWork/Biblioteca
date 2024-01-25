@@ -8,14 +8,18 @@
 @import 'bootstrap/scss/bootstrap';
 
 body{
-    background-color: rgb(234, 238, 243);
+    background: linear-gradient(0deg, #fafaff 0%, #d1dfff 100%);
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-article{
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
@@ -29,4 +33,10 @@ article{
 
 .navbar-nav{
     font-size: 1rem; 
+}
+
+.table{
+    width: 50%;
+    height: auto;
+    font-size: 1rem;
 }

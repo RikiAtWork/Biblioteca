@@ -35,8 +35,9 @@ class LibroController extends Controller
         $libro->titulo = $request->get('titulo');
         $libro->editorial = $request->get('editorial');
         $libro->precio = $request->get('precio');
-        $libro->autor_id = 0;
         $libro->save();
+
+        return redirect()->route('libros.index');
     }
 
     /**
@@ -52,7 +53,8 @@ class LibroController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $libro = Libro::findOrFail($id);
+        return view('libros.edit', compact('libro'));
     }
 
     /**
@@ -60,7 +62,14 @@ class LibroController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $libroAModificar = Libro::findOrFail($id);
+        $libroAModificar->titulo=$request->get('titulo');
+        $libroAModificar->editorial=$request->get('editorial');
+        $libroAModificar->precio=$request->get('precio');
+        $libroAModificar->save();
+
+        return redirect()->route('libros.index');
+
     }
 
     /**
@@ -68,6 +77,9 @@ class LibroController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $libro = Libro::findOrFail($id);
+        $libro->delete();
+        return redirect()->route('libros.index');
+    
     }
 }

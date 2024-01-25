@@ -8,31 +8,35 @@
 </head>
 <body>
     @include('partials.nav')
-    <article>
-        h1>Nuevo libro</h1>
+    <div class="container">
+        <h1>Nuevo libro</h1>
+        <form action="{{ route('libros.store') }}" method="POST" class="mb-3">
         @csrf
-        <form action="{{ route('libros.store') }}" method="POST">
-        <div class="row mb-3">
-            <div class="form-group">
-                <label for="titulo">Título:</label>
-                <input type="text" class="form-control" name="titulo"id="titulo">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="titulo" class="form-label">Título:</label>
+                    <input type="text" class="form-control" name="titulo" id="titulo" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="editorial" class="form-label">Editorial:</label>
+                    <input type="text" class="form-control" name="editorial" id="editorial" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="precio" class="form-label">Precio:</label>
+                    <input type="text" class="form-control" name="precio" id="precio" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <button type="submit" class="btn btn-dark btn-block">Enviar</button>
+
+                    <a class="btn btn-primary" href="{{route('libros.index')}}" role="button">Volver</a>
+                </div>
+                
             </div>
-
-            <div class="form-group">
-                <label for="editorial">Editorial:</label>
-                <input type="text" class="form-control" name="editorial"id="
-                editorial">
-            </div>
-
-            <div class="form-group">
-                <label for="precio">Precio:</label>
-                <input type="text" class="form-control" name="precio"id="precio">
-            </div>
-
-
-            <input type="submit" name="enviar" value="Enviar" class="btn btn-dark btn-block">
-        </div>
         </form>
-    </article>
+    </div>
+
 </body>
 </html>
