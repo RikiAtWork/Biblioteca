@@ -10,7 +10,7 @@
     @include('partials.nav')
     <div class="container">
         <h1>Actualizar Libro</h1>
-        <form action="{{ route('libros.update', $libro['id']) }}" method="PUT">
+        <form action="{{ route('libros.update', $libro['id']) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="row">
@@ -21,12 +21,12 @@
 
                 <div class="col-md-4 mb-3">
                     <label for="titulo">Nueva Editorial:</label>
-                    <input type="text" class="form-control" name="titulo" id="editorial" value="{{ $libro['editorial'] }}" required>    
+                    <input type="text" class="form-control" name="editorial" id="editorial" value="{{ $libro['editorial'] }}" required>    
                 </div>
 
                 <div class="col-md-4 mb-3">
                     <label for="titulo">Nuevo Precio:</label>
-                    <input type="text" class="form-control" name="titulo" id="titutlo" value="{{ $libro['precio'] }}" required>    
+                    <input type="text" class="form-control" name="precio" id="precio" value="{{ $libro['precio'] }}" required>    
                 </div>
             </div>
 
