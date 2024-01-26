@@ -8,7 +8,7 @@
         <div class="navbar-nav">
             <a class="nav-link" href="{{route('principal')}}">Home</a>
             <a class="nav-link" href="{{route('libros.index')}}">Listado libro</a>
-            <a class="nav-link" href="{{route('libros.index')}}">Listado autor</a>
+            <a class="nav-link" href="{{route('autores.index')}}">Listado autor</a>
             <a class="nav-link" href="">Listado Socios</a>
             <a class="nav-link" href="">Prestamo de libros</a>
             <a class="nav-link" href="">Filtro de libros</a>

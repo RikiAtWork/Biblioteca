@@ -24,9 +24,16 @@ Route::get('/insertar_libro', function(){
     return view('libros.create');
 })->name('libros_create');
 
+Route::get('/insertar_autor', function(){
+    return view('autores.create');
+})->name('autores_create');
+
 Route::resource('libros', LibroController::class);
 
+Route::resource('autores', AutorController::class);
 
 Route::get('/lista_libros', [LibroController::class, 'index'])->name('libros.index');
+
+Route::get('/lista_autores', [AutorController::class, 'index'])->name('autores.index');
 
 
