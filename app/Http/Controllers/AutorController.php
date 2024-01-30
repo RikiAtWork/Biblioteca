@@ -22,8 +22,7 @@ class AutorController extends Controller
      */
     public function create()
     {
-        $autores = Autor::get();
-        return view('libros.create', compact('autores'));
+      
     }
 
     /**

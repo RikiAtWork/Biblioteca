@@ -11,4 +11,8 @@ class Libro extends Model
     protected $fillable = ['titulo', 'editorial', 'precio'];
     
     use HasFactory;
+
+    public function autor(){
+        return $this->belongsTo(Autor::class);
+    }
 }

@@ -17,7 +17,7 @@
                 <th scope="col" class="col">Editorial</th>
                 <th scope="col" class="col">Precio</th>
                 <th scope="col" colspan="2">
-                    <form action="{{route('libros_create')}}">
+                    <form action="{{route('libros.create')}}">
                         <button type="submit" class="btn btn-outline-info btn-block" style="width: 200px;">Insertar</button>
                     </form>
                 </th>

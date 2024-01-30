@@ -20,9 +20,6 @@ Route::get('/', function () {
     return view('home');
 })->name("principal");
 
-Route::get('/insertar_libro', function(){
-    return view('libros.create');
-})->name('libros_create');
 
 Route::get('/insertar_autor', function(){
     return view('autores.create');
