@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Libro;
 use App\Models\Autor;
 
 
@@ -17,9 +18,22 @@ class AutorController extends Controller
         return view('autores.index', compact('autores'));
     }
 
+    public function autores()
+    {
+        $autores = Autor::get();
+        return view('autores.autor_filtro', compact('autores'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
+
+    public function filtro(Request $request){
+        $autor_id = $request->input('autor');
+        $librosAutor = Autor::findOrFail($autor_id)->libros();
+        return view('autores.autorlib', compact('librosAutor'));
+    }
+
     public function create()
     {
       

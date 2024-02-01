@@ -17,6 +17,12 @@ class LibroController extends Controller
         return view('libros.index', compact('libros'));
     }
 
+    public function lista(){
+        $libros = Libro::with('autor')->get();
+        $libros = Libro::paginate(3);
+        return view('libros.libautor', compact('libros'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

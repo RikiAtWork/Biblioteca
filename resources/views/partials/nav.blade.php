@@ -9,9 +9,10 @@
             <a class="nav-link" href="{{route('principal')}}">Home</a>
             <a class="nav-link" href="{{route('libros.index')}}">Listado libro</a>
             <a class="nav-link" href="{{route('autores.index')}}">Listado autor</a>
+            <a class="nav-link" href="{{route('libros.libautor')}}">Listado libros/autores</a>
             <a class="nav-link" href="">Listado Socios</a>
             <a class="nav-link" href="">Prestamo de libros</a>
-            <a class="nav-link" href="">Filtro de libros</a>
+            <a class="nav-link" href="{{route('autores_filtro')}}">Filtro de libros</a>
         </div>
         </div>
     </div>
