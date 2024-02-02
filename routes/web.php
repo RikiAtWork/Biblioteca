@@ -38,7 +38,7 @@ Route::get('/lista_autores', [AutorController::class, 'index'])->name('autores.i
 
 Route::get('/filtro_autor', [AutorController::class, 'autores'])->name('autores_filtro');
 
-Route::post('/autor_libros', [AutorController::class, 'filtro'])->name('autores.filtro');
+Route::post('/libros/filtrar/', [LibroController::class, 'filtrarPorAutor'])->name('libros.filtrar');
 
 
 

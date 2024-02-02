@@ -23,6 +23,15 @@ class LibroController extends Controller
         return view('libros.libautor', compact('libros'));
     }
 
+    public function filtrarPorAutor(Request $request)
+    {
+        $autorId = $request->input('autor');
+        $autor = Autor::findOrFail($autorId);
+        $libros = $autor->libros;
+
+        return view('libros.filtrado', compact('libros', 'autor'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -27,12 +26,6 @@ class AutorController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-
-    public function filtro(Request $request){
-        $autor_id = $request->input('autor');
-        $librosAutor = Autor::findOrFail($autor_id)->libros();
-        return view('autores.autorlib', compact('librosAutor'));
-    }
 
     public function create()
     {

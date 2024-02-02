@@ -9,7 +9,7 @@
 <body>  
     @include('partials.nav')
     <div class="container">
-        <form action="{{ route('autores.filtro') }}" method="POST">
+        <form action="{{ route('libros.filtrar')}}" method="POST">
             @csrf
             <div class="col-md-12">
                 <div class="mb-3">
